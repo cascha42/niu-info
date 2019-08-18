@@ -49,7 +49,7 @@ get_estimated_range() {
 
 get_last_gps_time() {
 	millies=$(cat /tmp/motor_data.json | jq '.data.gpsTimestamp')
-	date --date="@$(echo $(( $millies / 1000 )))"
+	date --date="@$(echo $(( $millies / 1000 )))" "+%F %T"
 }
 
 get_speed() {
