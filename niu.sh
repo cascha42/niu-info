@@ -16,7 +16,7 @@ get_battery_info() {
 	curl -s -H "token: ${token}" $url -o /tmp/battery_info.json
 }
 
-is_connected() {
+is_battery_connected() {
 	cat /tmp/motor_data.json | jq '.data.isConnected'
 }
 
@@ -48,16 +48,8 @@ get_estimated_range() {
 }
 
 get_last_update_time() {
-	millies=$(cat /tmp/motor_data.json | jq '.data.gpsTimestamp')
+	millies=$(cat /tmp/motor_data.json | jq '.data.infoTimestamp')
 	date --date="@$(echo $(( $millies / 1000 )))" "+%F %T"
-}
-
-get_speed() {
-	cat /tmp/motor_data.json | jq '.data.nowSpeed'
-}
-
-get_connection_status() {
-	cat /tmp/motor_data.json | jq '.data.isConnected'
 }
 
 get_lock_status() {
@@ -69,8 +61,6 @@ main() {
 	get_motor_data
 	#get_battery_info
 
-	echo "Connected: $(is_connected)"
-
 	echo -n "Lock Status: "
 	if [ "$(get_lock_status)" = "0" ]; then
 		echo "locked"
@@ -78,18 +68,21 @@ main() {
 		echo "unlocked"
 	fi
 
-	echo -n "Battery: $(get_battery_charge)%"
-	if [ "$(is_charging)" = "1" ]; then
-		echo " (Charging)"
+	if [ "$(is_battery_connected)" = "true" ]; then
+		echo -n "Battery: $(get_battery_charge)%"
+		if [ "$(is_charging)" = "1" ]; then
+			echo " (Charging)"
+		else
+			echo ""
+		fi
 	else
-		echo ""
+		echo "Battery: not connected"
 	fi
 
 	echo "Range: $(get_estimated_range)km"
 
 	echo "Position: $(get_gmap_link)"
-	echo "Last Update: $(get_last_update_time)"
-	echo "Speed: $(get_speed)km/h"
+	echo "Last API Update: $(get_last_update_time)"
 }
 main
 
