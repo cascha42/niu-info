@@ -153,3 +153,7 @@ I my case i use [mitmproxy][mitmproxy] on Linux together with an Android Device 
 [niu-app-home.jpg]: https://raw.githubusercontent.com/cascha42/niu-info/master/images/niu-app-home.jpg
 [mitmproxy-01.jpg]: https://raw.githubusercontent.com/cascha42/niu-info/master/images/mitmproxy-01.jpg
 [mitmproxy-02.jpg]: https://raw.githubusercontent.com/cascha42/niu-info/master/images/mitmproxy-02.jpg
+
+
+# Any questions? Need help?
+Feel free to contact me on [Telegram](https://t.me/cascha42) if you need any help or have any questions!
