@@ -136,12 +136,12 @@ In order to log in the NIU cloud to retrieve any data using the API you need the
 I my case i use [mitmproxy][mitmproxy] on Linux together with an Android Device so this tutorial is for that setup:
 1. start [mitmproxy][mitmproxy] on your computer, note ip and port (10.0.0.245:8080 in my case)
 2. setup proxy on android device in wifi settings ![][proxy-wifi-settings.jpg]
-3. open niu app to force a api-get request ![][niu-app-home.jpg]
+3. open niu app to force a api-get request ![][niu-app-home.png]
 4. check [mitmproxy][mitmproxy] and search for the request.. ![][mitmproxy-01.jpg]
-5. ..and hit return
-6. there's your token and serial number (yay \o/) ![][mitmproxy-02.jpg]
+..and hit return
+5. there's your token and serial number (yay \o/) ![][mitmproxy-02.jpg]
 
-7. dont forget to undo your proxy wifi settings :)
+6. dont forget to undo your proxy wifi settings :)
 
 
 [curl]: https://curl.haxx.se
@@ -149,3 +149,7 @@ I my case i use [mitmproxy][mitmproxy] on Linux together with an Android Device 
 [wireshark]: https://www.wireshark.org
 [mitmproxy]: https://mitmproxy.org
 
+[proxy-wifi-settings.jpg]: https://raw.githubusercontent.com/cascha42/niu-info/master/images/proxy-wifi-setting.jpg
+[niu-app-home.jpg]: https://raw.githubusercontent.com/cascha42/niu-info/master/images/niu-app-home.jpg
+[mitmproxy-01.jpg]: https://raw.githubusercontent.com/cascha42/niu-info/master/images/mitmproxy-01.jpg
+[mitmproxy-02.jpg]: https://raw.githubusercontent.com/cascha42/niu-info/master/images/mitmproxy-02.jpg
