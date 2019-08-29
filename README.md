@@ -4,7 +4,7 @@ Easy Bash-Script to get Live-Informations about you NIU E-scooter using the NIU 
 I ride a NIU N1S 2019 Special Blue (gloss) version.
 
 ## How it works
-Simply by requesting the NIU API using curl its possible to gain a lot of information about your NIU Scooter. You only need [cURL][curl], [jq][jq], your API-Token (check "How to get Token" for that) and the Serial-Number of you Scooter.
+Simply by requesting the NIU API using curl its possible to gain a lot of information about your NIU Scooter. You only need [cURL][curl], [jq][jq], your API-Token (check "How to get your Token" for that) and the Serial-Number of you Scooter.
 
 ## Here are some examples using the NIU-API in combination with jq:
 
