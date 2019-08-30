@@ -66,7 +66,7 @@ curl -X GET -H "token: YOURTOKEN" https://app-api-fk.niu.com/v3/motor_data/batte
 ```
 
 ##### Response:
-```
+```json
 {
   "data": {
     "batteries": {
@@ -119,7 +119,7 @@ curl -X GET -H "token: YOURTOKEN" https://app-api-fk.niu.com/v3/motor_data/batte
 ```
 
 ##### If you messed something up with the token, this is the response:
-```
+```json
 {
   "data": "",
   "desc": "登录信息错误",
