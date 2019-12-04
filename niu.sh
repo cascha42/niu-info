@@ -1,9 +1,11 @@
 #!/bin/sh
 
-# Config
+# Config and Variables
 . ./config.sh
 apiurl="https://app-api-fk.niu.com"
 
+
+# Functions
 get_motor_data() {
 	url="${apiurl}/v3/motor_data/index_info?sn=${serialnumber}"
 
@@ -61,6 +63,17 @@ main() {
 	get_motor_data
 	#get_battery_info
 
+
+	# Exit 1 if Token Error
+	if grep -q "ERROR" /tmp/motor_data.json; then
+	    echo "TOKEN ERROR, aborting."
+		exit 1
+	else
+		:	 
+	fi
+	
+
+	# Main Response
 	echo -n "Lock Status: "
 	if [ "$(get_lock_status)" = "0" ]; then
 		echo "locked"
